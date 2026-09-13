@@ -68,9 +68,10 @@ abbr{text-decoration:underline dotted;cursor:help}
 }
 .ticker__track{
   display:inline-flex;
-  animation:scroll 34s linear infinite;
+  width:max-content;
+  animation:scroll 102s linear infinite;
 }
-.ticker__track span{padding-right:0}
+.ticker__track span{padding-right:0;flex-shrink:0}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ---------- HERO ---------- */
@@ -86,7 +87,6 @@ abbr{text-decoration:underline dotted;cursor:help}
   color:var(--cream);
   text-align:center;
   padding:56px 24px 70px;
-  border-bottom:8px solid var(--navy);
   position:relative;
   overflow:hidden;
 }
@@ -101,7 +101,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 
 /* seal (logo image) */
 .seal{
-  width:132px;height:132px;margin:0 auto 26px;
+  width:190px;height:190px;margin:0 auto 26px;
   border-radius:50%;
   box-shadow:0 6px 18px rgba(0,0,0,.45);
 }
@@ -118,7 +118,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 }
 .hero__title{
   font-family:'Anton';font-weight:400;
-  text-transform:uppercase;line-height:.86;
+  text-transform:uppercase;line-height:1;
   font-size:clamp(2.6rem,11vw,7rem);
   margin:2px 0 10px;
   letter-spacing:-.01em;
@@ -157,7 +157,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 /* ---------- teaser strip ---------- */
 .strip{
   background:var(--navy);color:var(--cream);
-  border-top:6px solid var(--gold);border-bottom:6px solid var(--gold);
+  border-top:8px solid var(--gold);border-bottom:8px solid var(--gold);
   text-align:center;padding:38px 24px;
 }
 .strip__big{
@@ -202,6 +202,10 @@ abbr{text-decoration:underline dotted;cursor:help}
 
 /* ---------- the cause ---------- */
 .cause{padding:66px 0 0}
+.cause__crowd-right{
+  display:block;margin:0 auto;
+  width:clamp(166px,48vw,523px);height:auto;
+}
 .cause__art{
   width:100%;height:auto;display:block;
   margin-top:56px;
@@ -216,13 +220,13 @@ abbr{text-decoration:underline dotted;cursor:help}
 .cause__creed{
   text-align:center;font-family:'Anton';text-transform:uppercase;
   color:var(--red);font-size:clamp(1.4rem,4vw,2.4rem);
-  margin-top:40px;letter-spacing:.02em;
+  margin-top:0;letter-spacing:.02em;
 }
 
 .leadership{
   background:var(--navy);color:var(--cream);
   padding:70px 0;
-  border-top:8px solid var(--red);border-bottom:8px solid var(--red);
+  border-top:8px solid var(--red);
 }
 .people{
   display:grid;grid-template-columns:1fr 1fr;gap:34px;
@@ -237,7 +241,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 }
 .people__name{
   font-family:'Anton';font-weight:400;text-transform:uppercase;
-  letter-spacing:.01em;font-size:1.3rem;color:var(--gold);
+  letter-spacing:.01em;font-size:1.7rem;color:var(--gold);
 }
 .people__role{
   font-family:'Special Elite',monospace;font-size:.92rem;
@@ -274,7 +278,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 }
 
 /* ---------- attend ---------- */
-.attend{padding:66px 0}
+.attend{padding:66px 0 0}
 .attend__lead{
   max-width:640px;margin:0 auto 30px;text-align:center;
   font-size:1.12rem;line-height:1.6;
@@ -291,6 +295,10 @@ abbr{text-decoration:underline dotted;cursor:help}
   padding:7px 14px;
   box-shadow:2px 2px 0 var(--navy);
 }
+.attend__wall-st{
+  display:block;margin:0 auto;
+  width:clamp(136px,38vw,425px);height:auto;
+}
 
 /* ---------- register ---------- */
 .register{
@@ -300,7 +308,7 @@ abbr{text-decoration:underline dotted;cursor:help}
   background-size:48px 64px, cover;
   color:var(--cream);text-align:center;
   padding:74px 0;
-  border-top:8px solid var(--navy);
+  border-top:8px solid var(--gold);
 }
 .register__inner{max-width:640px}
 .register__body{
@@ -320,8 +328,14 @@ abbr{text-decoration:underline dotted;cursor:help}
   background:var(--navy-2);color:var(--cream-2);
   text-align:center;padding:40px 24px;
   font-size:.85rem;letter-spacing:.04em;
+  border-top:8px solid var(--gold);
 }
-.foot__seal{font-family:'Anton';font-size:1.6rem;color:var(--gold);margin-bottom:10px}
+.foot__logo{
+  width:96px;height:96px;margin:0 auto 14px;
+  border-radius:50%;
+  box-shadow:0 4px 12px rgba(0,0,0,.45);
+}
+.foot__seal{font-family:'Anton';font-size:2.4rem;color:var(--gold);margin-bottom:10px;letter-spacing:.1em}
 .foot p{margin:4px 0}
 .foot__fine{
   font-family:'Special Elite',monospace;
