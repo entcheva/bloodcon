@@ -76,27 +76,15 @@ abbr{text-decoration:underline dotted;cursor:help}
 /* ---------- HERO ---------- */
 .hero{
   background:
+    repeating-linear-gradient(-38deg, rgba(255,255,255,.03) 0 3px, transparent 3px 42px),
     radial-gradient(ellipse at 50% 25%, #b5311f 0%, var(--red) 45%, var(--red-dk) 100%);
   color:var(--cream);
   text-align:center;
   padding:56px 24px 70px;
   border-bottom:8px solid var(--navy);
   position:relative;
-  overflow:hidden;
 }
-/* illustrated header artwork behind the hero content */
-.hero::before{
-  content:"";
-  position:absolute;inset:0;z-index:0;
-  background:url("header.png") center top / cover no-repeat;
-}
-/* legibility scrim over the artwork */
-.hero::after{
-  content:"";
-  position:absolute;inset:0;z-index:1;
-  background:radial-gradient(ellipse at 50% 42%, rgba(20,10,8,.35) 0%, rgba(20,10,8,.62) 100%);
-}
-.hero__inner{max-width:840px;margin:0 auto;position:relative;z-index:2}
+.hero__inner{max-width:840px;margin:0 auto}
 
 /* seal (logo image) */
 .seal{
@@ -128,13 +116,18 @@ abbr{text-decoration:underline dotted;cursor:help}
   font-size:clamp(1rem,2.6vw,1.4rem);
   margin-bottom:26px;color:var(--cream);
 }
-.hero__meta{
-  list-style:none;display:inline-flex;flex-direction:column;gap:4px;
-  border-top:2px solid var(--cream);border-bottom:2px solid var(--cream);
-  padding:14px 30px;margin-bottom:32px;
-  font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+.hero__cta{
+  display:flex;flex-direction:column;align-items:center;
+  gap:22px;margin-bottom:32px;
 }
-.hero__meta strong{font-size:1.15rem}
+.hero__meta{
+  list-style:none;display:inline-flex;flex-direction:column;justify-content:center;gap:7px;
+  border-top:2px solid var(--cream);border-bottom:2px solid var(--cream);
+  padding:20px 40px;margin:0;
+  font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+  font-size:1.2rem;
+}
+.hero__meta strong{font-size:1.6rem}
 
 /* ---------- buttons ---------- */
 .btn{
@@ -200,7 +193,12 @@ abbr{text-decoration:underline dotted;cursor:help}
 }
 
 /* ---------- the cause ---------- */
-.cause{padding:66px 0}
+.cause{padding:66px 0 0}
+.cause__art{
+  width:100%;height:auto;display:block;
+  margin-top:56px;
+  border-top:8px solid var(--navy);
+}
 .cause__grid{
   display:grid;grid-template-columns:1fr 1fr;gap:34px;
   max-width:860px;margin:0 auto;
