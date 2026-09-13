@@ -76,44 +76,33 @@ abbr{text-decoration:underline dotted;cursor:help}
 /* ---------- HERO ---------- */
 .hero{
   background:
-    repeating-linear-gradient(-38deg, rgba(255,255,255,.03) 0 3px, transparent 3px 42px),
     radial-gradient(ellipse at 50% 25%, #b5311f 0%, var(--red) 45%, var(--red-dk) 100%);
   color:var(--cream);
   text-align:center;
   padding:56px 24px 70px;
   border-bottom:8px solid var(--navy);
   position:relative;
+  overflow:hidden;
 }
-.hero__inner{max-width:840px;margin:0 auto}
+/* illustrated header artwork behind the hero content */
+.hero::before{
+  content:"";
+  position:absolute;inset:0;z-index:0;
+  background:url("header.png") center top / cover no-repeat;
+}
+/* legibility scrim over the artwork */
+.hero::after{
+  content:"";
+  position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse at 50% 42%, rgba(20,10,8,.35) 0%, rgba(20,10,8,.62) 100%);
+}
+.hero__inner{max-width:840px;margin:0 auto;position:relative;z-index:2}
 
-/* seal */
+/* seal (logo image) */
 .seal{
   width:132px;height:132px;margin:0 auto 26px;
   border-radius:50%;
-  background:radial-gradient(circle at 50% 45%, #f0d98c 0%, var(--gold) 55%, #8a6216 100%);
-  border:4px solid var(--cream);
-  box-shadow:0 0 0 4px var(--navy), 0 6px 18px rgba(0,0,0,.4);
-  position:relative;
-  display:grid;place-items:center;
-}
-.seal__ring{
-  position:absolute;inset:9px;border-radius:50%;
-  border:2px dashed rgba(36,22,17,.55);
-}
-.seal__top,.seal__bottom{
-  position:absolute;left:0;right:0;text-align:center;
-  font-family:'Oswald';font-weight:700;font-size:.44rem;
-  letter-spacing:.06em;color:var(--ink);
-}
-.seal__top{top:12px}.seal__bottom{bottom:12px}
-.seal__core{display:flex;flex-direction:column;align-items:center;line-height:1}
-.seal__bsa{
-  font-family:'Anton';font-size:2.1rem;color:var(--red-dk);
-  letter-spacing:.02em;
-}
-.seal__mott{
-  font-family:'Oswald';font-weight:700;font-size:.5rem;
-  color:var(--ink);letter-spacing:.12em;margin-top:2px;
+  box-shadow:0 6px 18px rgba(0,0,0,.45);
 }
 
 .hero__eyebrow{
@@ -180,6 +169,35 @@ abbr{text-decoration:underline dotted;cursor:help}
   font-size:clamp(1rem,2.6vw,1.5rem);margin-top:10px;
 }
 .strip__small .ul{text-decoration:underline;text-decoration-color:var(--red);color:var(--gold)}
+
+/* ---------- countdown ---------- */
+.countdown{
+  background:var(--cream-2);
+  border-bottom:3px solid var(--red);
+  text-align:center;
+  padding:34px 24px;
+}
+.countdown__label{
+  font-family:'Anton';text-transform:uppercase;
+  color:var(--red);letter-spacing:.06em;
+  font-size:clamp(1.1rem,3vw,1.6rem);
+  margin-bottom:18px;
+}
+.countdown__clock{
+  display:flex;justify-content:center;flex-wrap:wrap;
+  gap:clamp(14px,4vw,42px);
+}
+.countdown__unit{display:flex;flex-direction:column;align-items:center;min-width:64px}
+.countdown__num{
+  font-family:'Anton';color:var(--navy);
+  font-size:clamp(2.2rem,7vw,3.6rem);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.countdown__cap{
+  font-family:'Oswald';font-weight:600;text-transform:uppercase;
+  letter-spacing:.14em;font-size:.72rem;color:var(--ink);
+  margin-top:6px;
+}
 
 /* ---------- the cause ---------- */
 .cause{padding:66px 0}
