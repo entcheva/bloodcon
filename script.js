@@ -68,7 +68,7 @@
         .then(function (data) {
           if (!data.success) throw new Error(data.message || "bad response");
           form.reset();
-          status.textContent = "You're on the list. Solidarity forever. ★";
+          status.textContent = "You're on the list. See you there!";
           status.classList.add("register-form__status--ok");
         })
         .catch(function () {
