@@ -76,8 +76,9 @@ abbr{text-decoration:underline dotted;cursor:help}
 /* ---------- HERO ---------- */
 .hero{
   background:
-    repeating-linear-gradient(-38deg, rgba(255,255,255,.03) 0 3px, transparent 3px 42px),
+    url("drops.svg") repeat,
     radial-gradient(ellipse at 50% 25%, #b5311f 0%, var(--red) 45%, var(--red-dk) 100%);
+  background-size:48px 64px, cover;
   color:var(--cream);
   text-align:center;
   padding:56px 24px 70px;
@@ -259,8 +260,9 @@ abbr{text-decoration:underline dotted;cursor:help}
 /* ---------- register ---------- */
 .register{
   background:
-    repeating-linear-gradient(38deg, rgba(0,0,0,.05) 0 3px, transparent 3px 42px),
+    url("drops.svg") repeat,
     var(--red);
+  background-size:48px 64px, cover;
   color:var(--cream);text-align:center;
   padding:74px 0;
   border-top:8px solid var(--navy);
