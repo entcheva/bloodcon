@@ -309,8 +309,34 @@ abbr{text-decoration:underline dotted;cursor:help}
 .register__body{
   font-size:1.12rem;line-height:1.6;margin-bottom:30px;
 }
+.register-form{
+  max-width:440px;margin:0 auto;text-align:left;
+}
+.register-form__row{margin-bottom:16px}
+.register-form__row--split{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.register-form label{
+  display:block;font-family:'Oswald';font-weight:600;text-transform:uppercase;
+  font-size:.78rem;letter-spacing:.06em;color:var(--gold);margin-bottom:6px;
+}
+.register-form input{
+  width:100%;
+  background:var(--cream);color:var(--ink);
+  border:2px solid var(--navy);
+  font-family:'Oswald';font-size:1rem;
+  padding:10px 12px;
+}
+.register-form input:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.register-form .btn{width:100%;margin-top:6px}
+.register-form__status{
+  margin-top:14px;font-family:'Special Elite',monospace;font-size:.9rem;
+  min-height:1.4em;
+}
+.register-form__status--ok{color:var(--gold)}
+.register-form__status--err{color:var(--cream)}
 .register__rsvp{
-  font-family:'Special Elite',monospace;margin-top:22px;letter-spacing:.03em;
+  font-family:'Special Elite',monospace;margin-top:26px;letter-spacing:.03em;
 }
 .register__rsvp a{color:var(--gold)}
 .register__signoff{

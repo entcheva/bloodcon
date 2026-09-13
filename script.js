@@ -45,4 +45,39 @@
     tick();
     var timer = setInterval(tick, 1000);
   }
+
+  // Registration form: submit via fetch (to Web3Forms) so members get an
+  // inline confirmation instead of being bounced to a redirect page.
+  // Without JS the form still works — it just falls back to a normal
+  // POST and Web3Forms' own thank-you page.
+  var form = document.getElementById("register-form");
+  if (form) {
+    var status = document.getElementById("register-form-status");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      btn.disabled = true;
+      status.textContent = "Sending…";
+      status.className = "register-form__status";
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data.success) throw new Error(data.message || "bad response");
+          form.reset();
+          status.textContent = "You're on the list. Solidarity forever. ★";
+          status.classList.add("register-form__status--ok");
+        })
+        .catch(function () {
+          status.textContent = "Something went wrong — email M.Skeeto@bloodcon.org directly instead.";
+          status.classList.add("register-form__status--err");
+        })
+        .finally(function () {
+          btn.disabled = false;
+        });
+    });
+  }
 })();

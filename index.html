@@ -41,7 +41,7 @@
         <li>Jersey City, NJ</li>
       </ul>
 
-      <a class="btn btn--big" href="#register">RSVP to Register Now →</a>
+      <a class="btn btn--big" href="#register">RSVP Now →</a>
     </div>
   </div>
 </header>
@@ -113,13 +113,13 @@
         <img class="people__photo" src="marty-skeeto-headshot.png" alt="Marty Skeeto">
         <h3 class="people__name">Marty Skeeto</h3>
         <p class="people__role">Convention Chair, BSA</p>
-        <p class="people__role">Email: M.Skeeto@bloodcon.org</p>
+        <p class="people__role"><a href="mailto:M.Skeeto@bloodcon.org">M.Skeeto@bloodcon.org</a></p>
       </div>
       <div class="people__card">
         <img class="people__photo" src="ticky-mcgonegal-headshot.png" alt="Ticky McGonegal">
         <h3 class="people__name">Ticky McGonegal</h3>
         <p class="people__role">Regional Director, BSA</p>
-        <p class="people__role">Email: T.McGonegal@bloodcon.org</p>
+        <p class="people__role"><a href="mailto:T.McGonegal@bloodcon.org">T.McGonegal@bloodcon.org</a></p>
       </div>
     </div>
   </div>
@@ -128,10 +128,39 @@
 <!-- REGISTER -->
 <section class="register" id="register">
   <div class="wrap register__inner">
-    <h2 class="section-title section-title--light">RSVP to Register Now!</h2>
-    <p class="register__body">Attendance is mandatory for existing dues-paying members and their invited guests. Registration materials have already been mailed to all active members. <br><br>Upon receipt of your registration materials, <a href="mailto:M.Skeeto@bloodcon.org">email the BSA Convention Chair</a> to RSVP and reserve your badge. <br><br><strong>Pro tip: Bring your completed registration form for expedited entry to BloodCon!</strong> <br><br>New members are welcome: additional registration forms will be available on site. <br><br><a href="mailto:M.Skeeto@bloodcon.org">Email the BSA Convention Chair</a> with any questions.</p>
-    <a class="btn btn--big btn--cream" href="mailto:M.Skeeto@bloodcon.org?subject=BloodCon">RSVP to register →</a>
-    <p class="register__rsvp">(RSVP to <a href="mailto:M.Skeeto@bloodcon.org">M.Skeeto@bloodcon.org</a>)</p>
+    <h2 class="section-title section-title--light">RSVP Now!</h2>
+    <p class="register__body">Attendance is mandatory for existing dues-paying members and their invited guests. Registration materials have already been mailed to all active members. <br><br><strong>Pro tip: Bring your completed registration form for expedited entry to BloodCon!</strong> <br><br>New members are welcome: additional registration forms will be available on site.</p>
+
+    <form class="register-form" id="register-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="cee64d54-1167-4ec2-a379-62a53c3608c5">
+      <input type="hidden" name="subject" value="BloodCon IV Registration">
+      <div class="register-form__row">
+        <label for="rf-name">Full name</label>
+        <input type="text" id="rf-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="register-form__row">
+        <label for="rf-email">Email</label>
+        <input type="email" id="rf-email" name="email" autocomplete="email" required>
+      </div>
+      <div class="register-form__row">
+        <label for="rf-species">Species / type of bloodsucker</label>
+        <input type="text" id="rf-species" name="species" required>
+      </div>
+      <div class="register-form__row register-form__row--split">
+        <div>
+          <label for="rf-chapter">Host organism</label>
+          <input type="text" id="rf-chapter" name="chapter">
+        </div>
+        <div>
+          <label for="rf-plusones">Attendee count</label>
+          <input type="number" id="rf-plusones" name="plus_ones" min="0" step="1" value="0">
+        </div>
+      </div>
+      <button type="submit" class="btn btn--big btn--cream">Reserve My Badge →</button>
+      <p class="register-form__status" id="register-form-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="register__rsvp">Prefer email? RSVP directly to <a href="mailto:M.Skeeto@bloodcon.org">M.Skeeto@bloodcon.org</a></p>
     <p class="register__signoff">See you there.<br><strong>Solidarity forever. ★</strong></p>
   </div>
 </section>
